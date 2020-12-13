@@ -1,0 +1,40 @@
+﻿{
+  "Language":{
+    "Name":"magyar",
+    "EnglishName": "Hungarian"
+  },
+  "Translations": {
+    "languages.osdefault": {
+      "Comment": "OS default",
+      "Value": "OS alapértelmezett"
+    },
+    "modpack.official": {
+      "Comment": "Official",
+      "Value": "Hivatalos"
+    },
+    "modpack.offline": {
+      "Comment": "Offline",
+      "Value": "Nem elérhető"
+    },
+    "modpack.solder": {
+      "Comment": "TechnicSolder",
+      "Value": null
+    },
+    "login.info": {
+      "Comment": "Please login using your Minecraft.NET account.",
+      "Value": "Kérjük jelentkezzen be Minecraft.NET fiókjával"
+    },
+    "login.email": {
+      "Comment": "E-mail",
+      "Value": null
+    },
+    "login.password": {
+      "Comment": "Password",
+      "Value": "Jelszó"
+    },
+    "login.button": {
+      "Comment": "Login",
+      "Value": "Belépés"
+    }
+  }
+}

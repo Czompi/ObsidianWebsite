@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <LangVersion>9.0</LangVersion>
+    <UserSecretsId>fcb2aae1-1150-42fb-b614-105032f3538c</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="Resources\Lang\en.json" />
+    <Content Remove="Resources\Lang\hu_HU.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Lang\en.json" />
+    <EmbeddedResource Include="Resources\Lang\hu_HU.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Text.Json" Version="5.0.0" />
+    <PackageReference Include="Westwind.AspNetCore.Markdown" Version="3.5.0" />
+  </ItemGroup>
+
+</Project>

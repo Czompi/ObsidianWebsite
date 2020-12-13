@@ -1,0 +1,62 @@
+﻿@{
+    var id = ViewData["Id"].ToString();
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"] - @Globals.Brand.Name</title>
+    <link rel="stylesheet" href="@Globals.CDN.GetURL("css/bootstrap/v4.5.3/bootstrap.min.css")" />
+    <link rel="stylesheet" href="@Globals.CDN.GetURL("css/cuttingcorners/v2/cuttingcorners-all.css")" />
+    <link rel="stylesheet" href="@Globals.CDN.GetURL("css/cuttingcorners/v2/theme/darkmode.css")" />
+    <link rel="stylesheet" href="@Globals.CDN.GetURL("css/obsidianweb/v1/theme.css")" />
+    <link rel="stylesheet" href="@Globals.CDN.GetURL("css/fontawesome/v5.15.1/fontawesome-all.min.css")"/>
+    <link rel="stylesheet" href="@Globals.CDN.GetURL("css/transferwise/v1/currency-flags.css")" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <style media="screen">
+        @{ #if DEBUG }
+        .text-debug {
+            color: var(--danger);
+        }
+
+        @{ #endif }
+        div.nav-container,
+        footer.copyright {
+            background-image: url("@Globals.CDN.GetURL("img/obsidianweb/background.png")");
+        }
+    </style>
+</head>
+<body class="h-100">
+    <div class="nav-container">
+        <div class="container-fluid">
+            <nav class="navbar nav navbar-expand-md">
+                <a href="@Globals.Brand.Url"><span class="navbar-brand mb-0 h1">@Globals.Brand.Name</span></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav mr-auto">
+                    @for (int i = 0; i < Globals.PageList.ToList().Count; i++)
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link@(Globals.PageList.ContainsKey(id) && Globals.PageList.ToList()[i].Value.IsListed && Globals.PageList.ToList()[i].Key == id  ? " active":"")" href="@(Globals.Brand.Url)@(Globals.PageList.ToList()[i].Key == "index" || Globals.PageList.ToList()[i].Key == "main" ? "": Globals.PageList.ToList()[i].Key)">@Globals.Translation.GetTranslatedString($"pages.{Globals.PageList.ToList()[i].Key}.title")</a>
+                        </li>
+                    }
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class="container-fluid content" aria-live="polite" aria-atomic="true">
+        @RenderBody()
+    </div>
+    <footer class="text-center text-small copyright fixed-bottom">
+        <p class="mb-1">
+            &copy; <a href="@Globals.Brand.Owner.Url" class="link-theme">@Globals.Brand.Owner.Name</a> @DateTime.Now.Year@{ #if DEBUG } - <span class="text-debug">Only for internal testing</span>@{ #endif }&nbsp;- @Globals.AppVersion - All rights reserved.
+        </p>
+    </footer>
+    <script src="@Globals.CDN.GetURL("js/jquery/v3.5.1/jquery.min.js")" charset="utf-8"></script>
+    <script src="@Globals.CDN.GetURL("js/borisolhor/drop_uploader/v2.1.2/drop_uploader.min.js")" charset="utf-8"></script>
+    <script src="@Globals.CDN.GetURL("js/bootstrap/v4.5.3/bootstrap.min.js")" charset="utf-8"></script>
+</body>
+</html>

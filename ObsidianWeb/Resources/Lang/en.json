@@ -1,0 +1,158 @@
+{
+  "Language": {
+    "Name": "English",
+    "EnglishName": "English"
+  },
+  "Translations": {
+    // Language list
+    "languages.osdefault": {
+      "Comment": "OS default",
+      "Value": "OS default"
+    },
+    // Modpack panel
+    "modpack.title": {
+      "Comment": "Modpacks",
+      "Value": "Modpacks"
+    },
+    // Modpack panel -> sidebar
+    "modpack.play": {
+      "Comment": "Play",
+      "Value": "Play"
+    },
+    "modpack.search": {
+      "Comment": "Search modpack...",
+      "Value": "Search modpack..."
+    },
+    "modpack.download.access": {
+      "Comment": "Downloading modpack... File: %file%",
+      "Value": "Downloading modpack... File: %file%"
+    },
+    "modpack.validation.access": {
+      "Comment": "Validating modpack... File: %file%",
+      "Value": "Validating modpack... File: %file%"
+    },
+    "assets.download.access": {
+      "Comment": "Downloading assets... File: %file%",
+      "Value": "Downloading assets... File: %file%"
+    },
+    "assets.validation.access": {
+      "Comment": "Validating assets... File: %file%",
+      "Value": "Validating assets... File: %file%"
+    },
+    "libraries.download.access": {
+      "Comment": "Downloading libraries... File: %file%",
+      "Value": "Downloading libraries... File: %file%"
+    },
+    "libraries.validation.access": {
+      "Comment": "Validating libraries... File: %file%",
+      "Value": "Validating libraries... File: %file%"
+    },
+    "modpack.official": {
+      "Comment": "Official",
+      "Value": "Official"
+    },
+    "modpack.offline": {
+      "Comment": "Offline",
+      "Value": "Offline"
+    },
+    "modpack.solder": {
+      "Comment": "TechnicSolder",
+      "Value": null
+    },
+    // Login panel
+    "login.info": {
+      "Comment": "Please login using your Minecraft.NET account.",
+      "Value": "Please login using your Minecraft.NET account."
+    },
+    "login.email": {
+      "Comment": "E-mail",
+      "Value": null
+    },
+    "login.password": {
+      "Comment": "Password",
+      "Value": "Password"
+    },
+    "login.button": {
+      "Comment": "Login",
+      "Value": "Login"
+    },
+    "login.errortitle": {
+      "Comment": "Error occurred | %launcher_name% %launcher_version_displayed%",
+      "Value": "Error occurred | %launcher_name% %launcher_version_displayed%"
+    },
+    "login.missingusername": {
+      "Comment": "Please enter username.",
+      "Value": "Please enter username."
+    },
+    "login.missingpassword": {
+      "Comment": "Please enter password.",
+      "Value": "Please enter password."
+    },
+    // Settings page
+    "settings.title": {
+      "Comment": "Settings",
+      "Value": "Settings"
+    },
+    "settings.channel.label": {
+      "Comment": "Select update channel:",
+      "Value": "Select update channel:"
+    },
+    "settings.channel.stable": {
+      "Comment": "STABLE",
+      "Value": "STABLE"
+    },
+    "settings.channel.beta": {
+      "Comment": "BETA",
+      "Value": "BETA"
+    },
+    "settings.ram.label": {
+      "Comment": "Select memory amount:",
+      "Value": "Select memory amount:"
+    },
+    "settings.languages.label": {
+      "Comment": "Select language:",
+      "Value": "Select language:"
+    },
+    "settings.languages.item": {
+      "Comment": "{0} ({1})",
+      "Value": "{0} ({1})"
+    },
+    "settings.languages.shortitem": {
+      "Comment": "{0}",
+      "Value": "{0}"
+    },
+    "settings.language.changed_warning": {
+      "Comment": "Please reload the launcher for the changes to take effect, unless it won't show everything properly.",
+      "Value": "Please reload the launcher for the changes to take effect, unless it won't show everything properly."
+    },
+    "settings.language.changed_title": {
+      "Comment": "Language changed!",
+      "Value": "Language changed!"
+    },
+    "main.title": {
+      "Comment": "Main",
+      "Value": "Main"
+    },
+    "news.title": {
+      "Comment": "News",
+      "Value": "News"
+    },
+    "profile.addnew": {
+      "Comment": "Add new profile",
+      "Value": "Add new profile"
+    },
+    // Clarifications
+    "clarification.not-associated-with-mojang": {
+      "Comment": "\"HunLux Launcher\" IS NOT OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG",
+      "Value": "\"HunLux Launcher\" IS NOT OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG"
+    },
+    "clarification.minecraft-trademark-mojang": {
+      "Comment": "\"Minecraft\" is a trademark of Mojang Synergies AB",
+      "Value": "\"Minecraft\" is a trademark of Mojang Synergies AB"
+    },
+    "clarification.hll-product-czompisoftware": {
+      "Comment": "\"HunLux Launcher\" is a product of Czompi Software",
+      "Value": "\"HunLux Launcher\" is a product of Czompi Software"
+    }
+  }
+}

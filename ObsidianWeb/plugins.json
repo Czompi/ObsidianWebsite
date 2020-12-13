@@ -1,0 +1,25 @@
+{
+	"obsidian-categories": {
+		"chat": "Chat",
+		"utilities": "Utilities"
+	},
+	"obsidian": {
+		"essentials": {
+			"id": "essentials",
+			"icon": "https://www.spigotmc.org/data/resource_icons/9/9089.jpg?1564514296",
+			"name": "Essentials",
+			"short_description": "Remake of the famous Essentials(X) Bukkit/Spigot plugin for Obsidian.",
+			"description": "https://raw.githubusercontent.com/Czompi/Essentials-Obsidian/master/pluginInfo.md",
+			"rating": 4.5,
+			"author": "Czompi",
+			"version_url_template": "https://github.com/Czompi/Essentials-Obsidian/releases/download/{version}/{product}-{versionToLower}.dll",
+			"versions": [
+				{
+					"version": "0.0.1-SNAPSHOT",
+					"change_log": "### End-user notes:\r\n- Added `/setwarp <name>` (fully working)\r\n- Added `/warp <name>` (fully working)\r\n- Added `/warps` (fully working)\r\n- Added `/sethome <name>` (fully working)\r\n- Added `/home <name>` (fully working)\r\n- Added `/homes` (fully working)\r\n- Added `/essentials <reload|debug|commands>` (fully working)\r\n- Added `/gc` (fully working)\r\n- Added `/gm <0|1|2|3>` (fully working)\r\n- Fixed `motd.txt` to show world time and online players count (when player joins to server) and added possibility to list all of the players on `motd.txt`\r\n- Added language support (every language has been added that is available for EssentialsX)\r\n\r\n### Dev notes:\r\n#### Fixed & registered things:\r\n- Registered `WarpCommandModule`\r\n- Fixed `warps` folder missing issue\r\n- Fixed `/essentials` command.\r\n- Fixed `/gm <0|1|2|3>` command.\r\n\r\n#### Added functions:\r\n- Added `AddWarp(String, WarpConfig, Obsidian.API.IPlayer)` function\r\n- Added `AddHome(Obsidian.API.IPlayer, HomeConfig)` function (not finished yet)\r\n- Refactoring config manager (added `LoadConfig()`, `SaveConfig()`, `ReloadConfig()` functions for bunch managing configs & added `LoadSingleConfig(EConfigs, string, string, out String)`, `SaveSingleConfig(EConfigs, string, string, object?)`, `ReloadSingleConfig(EConfigs type, string, string, out String)` functions to manage configs separately).\r\n- Added `RenderClickableCommand(String, String, String)` function\r\n- Modified `RenderCommandUsage(String, String)` function to use `Obsidian.API.IChatMessage` and `Obsidian.API.ITextComponent`. interfaces.\r\n- Updated to the latest version of Obsidian.API\r\n\r\n#### Added Extensions:\r\n- `HasPermission(String)` for `Obsidian.API.IPlayer`\r\n- `ToColoredString(String)` for `Obsidian.API.Position`\r\n- `ToColoredString(String, ChatColor)` for `Obsidian.API.Position`\r\n- `ToColoredString(String)` for `Essentials.Configs.Position`\r\n- `ToColoredString(String, ChatColor)` for `Essentials.Configs.Position`\r\n- `ToEssentialsPosition()` for `Obsidian.API.Position`\r\n- `ToObsidianPosition()` for `Essentials.Configs.Position`\r\n\r\n*I hope, that I wrote everything here, that is changed.*",
+					"release_date": "2020-11-11 23:58"
+				}
+			]
+		}
+	}
+}

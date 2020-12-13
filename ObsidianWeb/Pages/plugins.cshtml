@@ -1,0 +1,75 @@
+﻿@page "{id?}/{category?}"
+@using Westwind.AspNetCore.Markdown;
+@model PluginsWeb.Pages.ObsidianModel
+@{
+    ViewData["Id"] = "plugins";
+    ViewData["Title"] = Globals.Translation.GetTranslatedString($"pages.{ViewData["Id"]}.title");
+    var plugins = Globals.Plugins.Obsidian.ToList();
+    var categories = Globals.Plugins.ObsidianCategories.ToList();
+    Plugin Plugin = null;
+    try
+    {
+        Plugin = Globals.Plugins.Obsidian[this.Model.Id];
+    }
+    catch (Exception)
+    {
+    }
+}
+@if (string.IsNullOrEmpty(this.Model.Id) || this.Model.Id == "category")
+{
+    <h1 class="display-4 text-center">@ViewData["Title"]</h1>
+    <div class="row pluginList">
+        <div class="col">
+            <h4>Categories</h4>
+            <div class="list-group categories">
+                @for (int i = 0; i < categories.Count; i++)
+                {
+                    <a href="@(Globals.Brand.Url)@ViewData["Id"]/category/@categories[i].Key" class="list-group-item list-group-item-action@(i == 0 && string.IsNullOrEmpty(this.Model.Category) || (this.Model.Category != null && Globals.Plugins.ObsidianCategories.ContainsKey(this.Model.Category) && categories[i].Key == this.Model.Category) ? " active":"")">@categories[i].Value</a>
+                }
+            </div>
+        </div>
+        <div class="col-lg-10">
+            <ul class="list-unstyled">
+                @for (int i = 0; i < plugins.Count; i++)
+                {
+                    <li>
+                        <a href="@(Globals.Brand.Url)@ViewData["Id"]/@plugins[i].Value.Id" class="media btn btn-adaptive text-left">
+                            <img class="mr-3 align-self-center" src="@(plugins[i].Value.Icon ?? Globals.CDN.GetURL("img/obsidianweb/default-plugin-icon.png"))" width="64" height="64" alt="...">
+                            <div class="media-body">
+                                <div class="d-flex bd-highlight">
+                                    <div class="p-2 flex-grow-1 bd-highlight">
+                                        <h5 class="mt-0 mb-1">@plugins[i].Value.Name <small class="text-muted" style="font-size: 75%">@plugins[i].Value.Versions.OrderByDescending(x => DateTime.Parse(x.ReleaseDate)).FirstOrDefault().Version</small></h5>
+                                        @Markdown.ParseHtmlString(Markdown.Parse(plugins[i].Value.ShortDescription))
+                                        <small><span class="text-muted">Author: </span><i>@plugins[i].Value.Author</i></small>
+                                    </div>
+                                    <div class="p-2 align-self-center" style="font-size: 75%">
+                                        <p>
+                                            <span class="text-muted">Downloads:</span>
+                                            NULL
+                                        </p>
+                                        <p>
+                                            <span class="text-muted">Rating:</span>
+                                            @GraphicsElementRender.RenderRating(plugins[i].Value.Rating)
+                                        </p>
+                                        <p>
+                                            <span class="text-muted">Updated:</span>
+                                            @DateTime.Parse(plugins[i].Value.Versions.OrderByDescending(x => DateTime.Parse(x.ReleaseDate)).FirstOrDefault().ReleaseDate).ToElapsedTime()
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+}
+else
+{
+    <h1 class="display-4 text-center">@Plugin.Name <small style="font-size:50%" class="text-theme">@Plugin.Versions.OrderByDescending(x => DateTime.Parse(x.ReleaseDate)).FirstOrDefault().Version</small></h1>
+    <div><a href="@Plugin.VersionUrlTemplate.ReplaceProductInfo(Plugin.Id, Plugin.Versions.OrderByDescending(x => DateTime.Parse(x.ReleaseDate)).FirstOrDefault().Version, PluginType.Obsidian)" class="btn btn-theme">Download latest</a></div>
+    <div>
+        @(Plugin.Description.IsUrl() ? Markdown.ParseHtmlString(Markdown.ParseFromUrl(Plugin.Description)) : Markdown.ParseHtmlString(Markdown.Parse(Plugin.Description)))
+    </div>
+}
